@@ -16,6 +16,8 @@
  */
 package org.apache.commons.text;
 
+import org.apache.commons.text.backport.SystemUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -26,7 +28,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Objects;
+import org.apache.commons.text.backport.Objects;
 import java.util.Set;
 
 /**
@@ -279,7 +281,7 @@ public final class AlphabetConverter {
                 : originalToEncoded.entrySet()) {
             sb.append(codePointToString(entry.getKey()))
                     .append(ARROW)
-                    .append(entry.getValue()).append(System.lineSeparator());
+                    .append(entry.getValue()).append(SystemUtils.lineSeparator());
         }
 
         return sb.toString();

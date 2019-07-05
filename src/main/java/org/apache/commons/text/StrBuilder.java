@@ -23,7 +23,8 @@ import java.io.Writer;
 import java.nio.CharBuffer;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
+import org.apache.commons.text.backport.Objects;
+import org.apache.commons.text.backport.SystemUtils;
 
 /**
  * Builds a string from constituent parts providing a more flexible and powerful API
@@ -473,7 +474,7 @@ public class StrBuilder implements CharSequence, Appendable, Serializable, Build
      */
     public StrBuilder appendNewLine() {
         if (newLine == null)  {
-            append(System.lineSeparator());
+            append(SystemUtils.lineSeparator());
             return this;
         }
         return append(newLine);

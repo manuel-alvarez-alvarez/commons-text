@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
+import org.apache.commons.text.backport.SystemUtils;
 
 /**
  * <p>
@@ -286,7 +287,7 @@ public class WordUtils {
             return null;
         }
         if (newLineStr == null) {
-            newLineStr = System.lineSeparator();
+            newLineStr = SystemUtils.lineSeparator();
         }
         if (wrapLength < 1) {
             wrapLength = 1;

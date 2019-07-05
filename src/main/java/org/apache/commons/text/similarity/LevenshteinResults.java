@@ -16,7 +16,7 @@
  */
 package org.apache.commons.text.similarity;
 
-import java.util.Objects;
+import org.apache.commons.text.backport.Objects;
 
 /**
  * Container class to store Levenshtein distance between two character sequences.

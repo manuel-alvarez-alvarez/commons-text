@@ -23,8 +23,9 @@ import java.io.Writer;
 import java.nio.CharBuffer;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
+import org.apache.commons.text.backport.Objects;
 
+import org.apache.commons.text.backport.SystemUtils;
 import org.apache.commons.text.matcher.StringMatcher;
 
 /**
@@ -502,7 +503,7 @@ public class TextStringBuilder implements CharSequence, Appendable, Serializable
      */
     public TextStringBuilder appendNewLine() {
         if (newLine == null) {
-            append(System.lineSeparator());
+            append(SystemUtils.lineSeparator());
             return this;
         }
         return append(newLine);
